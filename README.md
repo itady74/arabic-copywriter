@@ -31,7 +31,7 @@ Unlike `ux-writing-arabic`, the focus here is **brand voice, marketing copy, and
 Type in any Claude / Antigravity / OpenCode / Cursor / Windsurf chat:
 
 ```
-npx skills add arabixuxwriting/arabic-copywriter
+npx skills add itady74/arabic-copywriter
 ```
 
 الـ agent سيشغّل الأمر ده ويثبّت المهارة تلقائيًا.
@@ -43,29 +43,29 @@ The agent will run this command and install the skill automatically.
 
 ```bash
 # Clone the skill into your project's .skills folder
-git clone https://github.com/arabixuxwriting/arabic-copywriter.git .skills/arabic-copywriter
+git clone https://github.com/itady74/arabic-copywriter.git .skills/arabic-copywriter
 ```
 
 أو اكتب في الشات:
 Or type in chat:
 
 ```
-git clone https://github.com/arabixuxwriting/arabic-copywriter.git .skills/arabic-copywriter
+git clone https://github.com/itady74/arabic-copywriter.git .skills/arabic-copywriter
 ```
 
 ---
 
 ### الـ agents المدعومة · Supported agents
 
-| Agent               | طريقة التثبيت                                                     |
-| ------------------- | ----------------------------------------------------------------- |
-| **Antigravity**     | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **Claude Code**     | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **OpenCode**        | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **Cursor**          | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **Windsurf**        | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **VS Code Copilot** | اكتب في الشات: `npx skills add arabixuxwriting/arabic-copywriter` |
-| **Terminal مباشر**  | `npx skills add arabixuxwriting/arabic-copywriter`                |
+| Agent               | طريقة التثبيت                                             |
+| ------------------- | --------------------------------------------------------- |
+| **Antigravity**     | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **Claude Code**     | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **OpenCode**        | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **Cursor**          | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **Windsurf**        | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **VS Code Copilot** | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
+| **Terminal مباشر**  | `npx skills add itady74/arabic-copywriter`                |
 
 > [!NOTE]
 > المهارة لسه مش منشورة على skills.sh. استخدم طريقة git في الوقت الحالي.
