@@ -25,72 +25,98 @@ Unlike `ux-writing-arabic`, the focus here is **brand voice, marketing copy, and
 
 ## التثبيت · Installation
 
-### عن طريق الشات (مباشرةً مع الـ agent) · Via agent chat
-
-اكتب في أي محادثة مع Claude / Antigravity / OpenCode / Cursor / Windsurf:
-Type in any Claude / Antigravity / OpenCode / Cursor / Windsurf chat:
-
-```
-npx skills add itady74/arabic-copywriter
-```
-
-الـ agent سيشغّل الأمر ده ويثبّت المهارة تلقائيًا.
-The agent will run this command and install the skill automatically.
-
----
-
-### عن طريق git (قبل النشر / local) · Via git (pre-publish / local)
+### الأمر الصحيح · The correct command
 
 ```bash
-# Clone the skill into your project's .skills folder
-git clone https://github.com/itady74/arabic-copywriter.git .skills/arabic-copywriter
+npx skills add itady74/arabic-copywriter --yes
 ```
 
-أو اكتب في الشات:
-Or type in chat:
-
-```
-git clone https://github.com/itady74/arabic-copywriter.git .skills/arabic-copywriter
-```
+> الـ `--yes` مهم. من غيره الـ CLI بيوقفك عند prompt تختار فيه الـ agents يدويًا.
+> The `--yes` flag is required. Without it the CLI pauses at an interactive agent-selector prompt.
 
 ---
 
-### الـ agents المدعومة · Supported agents
+### ايه اللي بيحصل لما تشغّل الأمر · What happens when you run it
 
-| Agent               | طريقة التثبيت                                             |
-| ------------------- | --------------------------------------------------------- |
-| **Antigravity**     | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **Claude Code**     | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **OpenCode**        | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **Cursor**          | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **Windsurf**        | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **VS Code Copilot** | اكتب في الشات: `npx skills add itady74/arabic-copywriter` |
-| **Terminal مباشر**  | `npx skills add itady74/arabic-copywriter`                |
+```
+◇  Source: https://github.com/itady74/arabic-copywriter.git
+◇  Repository cloned
+◇  Found 1 skill
 
-> [!NOTE]
-> المهارة لسه مش منشورة على skills.sh. استخدم طريقة git في الوقت الحالي.
-> Skill not yet published on skills.sh. Use the git method for now.
+●  Skill: arabic-copywriter
+│  دليل شامل لكتابة تجربة المستخدم (UX Writing) والتصميم المحتوى العربي.
+
+◇  41 agents
+●  Installing to: Antigravity, Claude Code, Codex, Cursor, Gemini CLI, OpenCode
+
+◇  Installation Summary
+│  .agents/skills/arabic-copywriter
+│    universal: Codex, Cursor, Gemini CLI, OpenCode, Amp +3 more
+│    symlink → Antigravity, Claude Code
+
+◇  Installation complete
+✓  Installed 1 skill
+```
+
+الـ CLI بيعمل 3 حاجات تلقائيًا:
+
+1. يـ clone الـ repo من GitHub
+2. يحط الملفات في `.agents/skills/arabic-copywriter` (المسار العالمي)
+3. يعمل symlinks لـ Antigravity و Claude Code في مساراتهم الخاصة
+
+The CLI automatically:
+
+1. Clones the repo from GitHub
+2. Places files in `.agents/skills/arabic-copywriter` (the universal path)
+3. Creates symlinks for Antigravity and Claude Code in their dedicated paths
 
 ---
 
-## الاستخدام · Usage
+### الـ agents المدعومة وطريقة التثبيت · Supported agents & how they connect
 
-بعد التثبيت، اكتب في الشات:
-After installing, type in chat:
+| Agent                                         | النوع     | المسار                             |
+| --------------------------------------------- | --------- | ---------------------------------- |
+| **Antigravity**                               | Symlink   | `.agent/skills/arabic-copywriter`  |
+| **Claude Code**                               | Symlink   | `.claude/skills/arabic-copywriter` |
+| **Cursor**                                    | Universal | `.agents/skills/arabic-copywriter` |
+| **Codex**                                     | Universal | `.agents/skills/arabic-copywriter` |
+| **Gemini CLI**                                | Universal | `.agents/skills/arabic-copywriter` |
+| **OpenCode**                                  | Universal | `.agents/skills/arabic-copywriter` |
+| **Amp, Cline, GitHub Copilot, Kimi Code CLI** | Universal | `.agents/skills/arabic-copywriter` |
+
+> **Universal** = الملفات موجودة فعلاً في الـ path ده.
+> **Symlink** = الـ agent بيشوف نفس الملفات عن طريق shortcut من مساره الخاص.
+
+---
+
+### لو ظهرلك prompt التحديد (بدون `--yes`) · If the agent-selector prompt appears
+
+لو نسيت الـ `--yes` وظهر الـ prompt ده:
+
+```
+◆  Which agents do you want to install to?
+│  ── Universal (.agents/skills) ── always included ────────
+│    • Amp  • Cline  • Codex  • Cursor  • Gemini CLI
+│    • GitHub Copilot  • Kimi Code CLI  • OpenCode
+│
+│  ── Additional agents ──────────────────────────────────
+│  ❯ ○ Antigravity (.agent/skills)
+│    ○ Claude Code (.claude/skills)
+│    ...
+```
+
+اضغط **Ctrl+C** واشغّل الأمر تاني مع `--yes`.
+Press **Ctrl+C** and re-run with `--yes`.
+
+---
+
+### استدعاء المهارة بعد التثبيت · Using the skill after installation
 
 ```
 /copywriter اكتب رسالة ترحيب لمستخدم جديد
 /copywriter راجع نبرة النص التسويقي ده
-/copywriter هل الإشعار ده صح: "تم تفعيل اشتراكك"
-/copywriter راجع رسائل الخطأ
-```
-
-أو بالإنجليزي:
-
-```
-/copywriter write a welcome message for a new Arabic-speaking user
-/copywriter review tone of this Arabic copy
-/copywriter check this push notification: "تم تفعيل اشتراكك"
+/copywriter هل الإشعار ده صح؟ "تم تفعيل اشتراكك"
+/copywriter review error messages
 ```
 
 ---
@@ -123,4 +149,4 @@ After installing, type in chat:
 
 ---
 
-_v1.0.0 · MIT · arabixuxwriting_
+_v1.0.0 · MIT · itady74_
